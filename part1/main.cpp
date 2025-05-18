@@ -6,8 +6,8 @@
 
 void printDatasetMenu() {
     std::cout << "\nAvailable datasets:" << std::endl;
-    std::cout << "1. CS205 Large Dataset (CS205_large_Data__1.txt)" << std::endl;
-    std::cout << "2. CS205 Small Dataset (CS205_small_Data__1.txt)" << std::endl;
+    std::cout << "1. CS205 Large Dataset (CS205_large_Data__17.txt)" << std::endl;
+    std::cout << "2. CS205 Small Dataset (CS205_small_Data__10.txt)" << std::endl;
     std::cout << "3. Diabetes Dataset (diabetes.csv)" << std::endl;
     std::cout << "Please enter your choice (1-3): ";
 }
@@ -41,10 +41,10 @@ int main() {
         
         switch (datasetChoice) {
             case 1:
-                datasetFile = "CS205_large_Data__1.txt";
+                datasetFile = "CS205_large_Data__17.txt";
                 break;
             case 2:
-                datasetFile = "CS205_small_Data__1.txt";
+                datasetFile = "CS205_small_Data__10.txt";
                 break;
             case 3:
                 datasetFile = "diabetes.csv";
