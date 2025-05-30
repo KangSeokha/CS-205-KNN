@@ -1,8 +1,18 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <vector>
+#include <iomanip>
+#include <algorithm>
+#include <utility>
 #include "knn_utils.h"
 #include "feature_selector.h"
+#include "plot_utils.h"
+
+struct FeatureResult {
+    std::vector<int> features;
+    double accuracy;
+};
 
 void printDatasetMenu() {
     std::cout << "\nAvailable datasets:" << std::endl;
@@ -51,7 +61,7 @@ int main() {
                 isCSV = true;
                 break;
             default:
-                std::cout << "Invalid choice. Please enter a number between 1 and 4." << std::endl;
+                std::cout << "Invalid choice. Please enter a number between 1 and 3." << std::endl;
                 continue;
         }
         break;
@@ -116,22 +126,35 @@ int main() {
     // Run selected algorithm(s)
     try {
         switch (algorithmChoice) {
-            case 1:
+            case 1: {
                 std::cout << "\nRunning Forward Selection..." << std::endl;
-                FeatureSelector::forwardSelection(X, y);
+                auto forwardResults = FeatureSelector::forwardSelection(X, y);
+                std::string plotTitle = "Forward Selection Results - " + datasetFile;
+                PlotUtils::plotResults(forwardResults, "forward_selection_results.png", plotTitle);
                 break;
-            case 2:
+            }
+            case 2: {
                 std::cout << "\nRunning Backward Elimination..." << std::endl;
-                FeatureSelector::backwardElimination(X, y);
+                auto backwardResults = FeatureSelector::backwardElimination(X, y);
+                std::string plotTitle = "Backward Elimination Results - " + datasetFile;
+                PlotUtils::plotResults(backwardResults, "backward_elimination_results.png", plotTitle);
                 break;
-            case 3:
+            }
+            case 3: {
                 std::cout << "\nRunning Forward Selection..." << std::endl;
-                FeatureSelector::forwardSelection(X, y);
+                auto forwardResults = FeatureSelector::forwardSelection(X, y);
+                std::string forwardTitle = "Forward Selection Results - " + datasetFile;
+                PlotUtils::plotResults(forwardResults, "forward_selection_results.png", forwardTitle);
+                
                 std::cout << "\n----------------------------------------" << std::endl;
                 std::cout << "----------------------------------------\n" << std::endl;
+                
                 std::cout << "Running Backward Elimination..." << std::endl;
-                FeatureSelector::backwardElimination(X, y);
+                auto backwardResults = FeatureSelector::backwardElimination(X, y);
+                std::string backwardTitle = "Backward Elimination Results - " + datasetFile;
+                PlotUtils::plotResults(backwardResults, "backward_elimination_results.png", backwardTitle);
                 break;
+            }
         }
     } catch (const std::exception& e) {
         std::cerr << "Error during algorithm execution: " << e.what() << std::endl;
