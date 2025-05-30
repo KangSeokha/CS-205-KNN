@@ -22,3 +22,6 @@
 `g++ -std=c++11 -o feature_selection_app main.cpp feature_selector.cpp knn_utils.cpp plot_utils.cppy`
 
 ## Performance Comparison
+
+![Alt text](part1/forward_selection_results.png)
+![Alt text](part1/backward_elimination_results.png)
