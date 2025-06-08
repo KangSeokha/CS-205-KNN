@@ -24,5 +24,8 @@
 
 ## Performance Comparison
 
-![Alt text](part1/forward_selection_results.png)
-![Alt text](part1/backward_elimination_results.png)
+- Part 1
+  ![Alt text](part1/forward_selection_results.png)
+  ![Alt text](part1/backward_elimination_results.png)
+- Part 2
+  ![Alt text](part1/backward_elimination_results.png)
