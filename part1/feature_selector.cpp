@@ -1,9 +1,9 @@
 #include "feature_selector.h"
-#include "knn_utils.h" 
+#include "knn_utils.h" // Already included in .h, but good practice for .cpp if directly using its types
 #include <iostream>
-#include <algorithm> 
-#include <numeric>   
-#include <limits>    
+#include <algorithm> // For std::remove, std::iota
+#include <numeric>   // For std::iota (though already in knn_utils.cpp, this makes this unit more self-contained if needed)
+#include <limits>    // For std::numeric_limits
 
 std::vector<std::pair<std::vector<int>, double>> FeatureSelector::forwardSelection(
     const std::vector<std::vector<double> >& X, const std::vector<int>& y) {
