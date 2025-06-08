@@ -19,6 +19,7 @@
 
 ## How To Execute
 
+`cd part1`
 `g++ -std=c++11 -o feature_selection_app main.cpp feature_selector.cpp knn_utils.cpp plot_utils.cppy`
 
 ## Performance Comparison

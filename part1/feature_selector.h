@@ -2,9 +2,9 @@
 #define FEATURE_SELECTOR_H
 
 #include <vector>
-#include <string> // Though not directly used by methods, often included with vector
+#include <string>
 #include <utility>
-#include "knn_utils.h" // Needs KNNUtils for its operations
+#include "knn_utils.h"
 
 class FeatureSelector {
 public:
@@ -19,4 +19,4 @@ public:
     );
 };
 
-#endif // FEATURE_SELECTOR_H
+#endif 
